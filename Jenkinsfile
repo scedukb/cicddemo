@@ -17,6 +17,8 @@ pipeline {
                sh 'mkdir -p ${GOPATH}/src/hello-world'
                // Copy all files in our Jenkins workspace to our project directory.
                sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
+               // set GO111MODULE environment variable
+               sh 'go env -w GO111MODULE=auto'
                // Build the app.
                sh 'go build'
   }
