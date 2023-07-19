@@ -21,6 +21,8 @@ pipeline {
                sh 'go env -w GO111MODULE=auto'
                // set GOCACHE to off
                sh 'go env -w GOCHACHE=off'
+               // set GOENV file path
+               sh 'go env -w GOENV="/tmp/.config/go/env"'
                // Build the app.
                sh 'go build'
   }
