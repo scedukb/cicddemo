@@ -19,6 +19,8 @@ pipeline {
                sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
                // set GO111MODULE environment variable
                sh 'go env -w GO111MODULE=auto'
+               // set GOCACHE to off
+               sh 'go env -w GOCHACHE=off'
                // Build the app.
                sh 'go build'
   }
