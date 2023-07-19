@@ -16,16 +16,16 @@ pipeline {
                // Create our project directory.
                sh 'cd ${GOPATH}/src'
                sh 'mkdir -p ${GOPATH}/src/hello-world'
-               sh 'mkdir -p /.config/go/env'
-               sh 'touch /.config/go/env'
+               // sh 'mkdir -p /.config/go/env'
+               // sh 'touch /.config/go/env'
                // Copy all files in our Jenkins workspace to our project directory.
                sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
                // set GO111MODULE environment variable
-               sh 'go env -w GO111MODULE=auto'
+               // sh 'go env -w GO111MODULE=auto'
                // set GOCACHE to off
-               sh 'go env -w GOCHACHE=off'
+               // sh 'go env -w GOCHACHE=off'
                // set GOENV file path
-               sh 'export GOENV="/tmp/.config/go/env"'
+               // sh 'export GOENV="/tmp/.config/go/env"'
                // Build the app.
                sh 'go build'
   }
