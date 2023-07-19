@@ -27,6 +27,7 @@ pipeline {
                // set GOENV file path
                // sh 'export GOENV="/tmp/.config/go/env"'
                // Build the app.
+               sh 'go mod init'
                sh 'go build -buildvcs=false'
   }
       }
