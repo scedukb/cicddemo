@@ -19,3 +19,4 @@ body := w.Body.String()
 if body != `{"message": "hello world"}` {
     t.Fatalf("unexpected body received: %s", body)
 }
+}
