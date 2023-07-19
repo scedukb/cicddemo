@@ -9,6 +9,7 @@ pipeline {
            agent {
                docker {
                    image 'golang'
+                   args '-u root --privileged'
                }
            }
            steps {
